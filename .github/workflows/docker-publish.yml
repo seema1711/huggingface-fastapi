@@ -19,7 +19,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Lowercase the repo name and username
-        run: echo "REPO={GITHUB_REPOSITORY,,}" >> ${GITHUB_ENV}
+        run: echo "REPO=${GITHUB_REPOSITORY,,}" >> ${GITHUB_ENV}
         
       - name: Build and Push container image to registry
         uses: docker/build-push-action@v3
